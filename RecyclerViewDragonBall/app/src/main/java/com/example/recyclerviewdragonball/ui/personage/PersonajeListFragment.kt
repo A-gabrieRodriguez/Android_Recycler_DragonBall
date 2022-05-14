@@ -8,25 +8,25 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.recyclerviewdragonball.R
-import com.example.recyclerviewdragonball.databinding.FragmentPersonageListBinding
+import com.example.recyclerviewdragonball.databinding.FragmentPersonajeListBinding
 import com.example.recyclerviewdragonball.repository.DictionaryRepository
 
-class PersonageListFragment : Fragment() {
+class PersonajeListFragment : Fragment() {
     private val viewModelFactory by lazy {
         val repository = DictionaryRepository()
-        PersonageViewModelFactory(repository)
+        PersonajeViewModelFactory(repository)
     }
-    private val viewModel: PersonageViewModel by viewModels {
+    private val viewModel: PersonajeViewModel by viewModels {
         viewModelFactory
     }
-    private lateinit var binding: FragmentPersonageListBinding
+    private lateinit var binding: FragmentPersonajeListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_personage_list, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_personaje_list, container, false)
         return binding.root
     }
 
@@ -34,7 +34,7 @@ class PersonageListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val wordListRecyclerView = binding.wordListRecyclerView
-        val wordAdapter = PersonageAdapter()
+        val wordAdapter = PersonajeAdapter()
         wordListRecyclerView.apply {
             adapter = wordAdapter
         }

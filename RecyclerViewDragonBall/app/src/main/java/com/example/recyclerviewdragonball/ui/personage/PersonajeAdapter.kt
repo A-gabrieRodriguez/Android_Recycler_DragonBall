@@ -6,19 +6,19 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewdragonball.R
 import com.example.recyclerviewdragonball.databinding.CardDragonballBinding
-import com.example.recyclerviewdragonball.model.Personage
+import com.example.recyclerviewdragonball.model.Personaje
 
-class PersonageAdapter : RecyclerView.Adapter<PersonageAdapter.PersonageViewHolder>() {
-    private var personages: List<Personage>? = null
+class PersonajeAdapter : RecyclerView.Adapter<PersonajeAdapter.PersonageViewHolder>() {
+    private var personajes: List<Personaje>? = null
 
-    fun setData(data: List<Personage>) {
-        personages = data
+    fun setData(data: List<Personaje>) {
+        personajes = data
         notifyDataSetChanged()
     }
     inner class PersonageViewHolder(private val binding: CardDragonballBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(personage: Personage) {
-            binding.personage = personage
+        fun bind(personaje: Personaje) {
+            binding.personage = personaje
             binding.executePendingBindings()
         }
     }
@@ -32,11 +32,11 @@ class PersonageAdapter : RecyclerView.Adapter<PersonageAdapter.PersonageViewHold
             )
         )
     override fun onBindViewHolder(holder: PersonageViewHolder, position: Int) {
-        personages?.let {
+        personajes?.let {
             holder.bind(it[position])
         }
     }
 
-    override fun getItemCount() = personages?.size ?: 0
+    override fun getItemCount() = personajes?.size ?: 0
 
 }

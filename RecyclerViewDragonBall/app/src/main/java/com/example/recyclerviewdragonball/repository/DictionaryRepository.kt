@@ -1,18 +1,19 @@
 package com.example.recyclerviewdragonball.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.example.recyclerviewdragonball.model.Personage
+import com.example.recyclerviewdragonball.R
+import com.example.recyclerviewdragonball.model.Personaje
 
 class DictionaryRepository {
     private var _personage = listOf(
-        Personage("Goku", "Personage principal del anime"),
-        Personage("Vegeta", "Personage secundario del anime rival de Goku"),
-        Personage("Krilin", "Amigo del personage principal"),
-        Personage("Magin-boo", "Villano del anime"),
-        Personage("Frezeer", "Villano y aliado de del anime"),
-        Personage("Goah", "Hijo del personage principal"),
+        Personaje("Goku", "Personage principal del anime", R.drawable.goku),
+        Personaje("Vegeta", "Personage secundario del anime rival de Goku",R.drawable.vegeta),
+        Personaje("Krilin", "Amigo del personage principal",R.drawable.krilin),
+        Personaje("Magin-boo", "Villano del anime",R.drawable.maginboo),
+        Personaje("Frezeer", "Villano y aliado de del anime",R.drawable.freeza),
+        Personaje("Goah", "Hijo del personage principal",R.drawable.gohan),
         ).toMutableList()
 
-    val personages: MutableLiveData<List<Personage>> =MutableLiveData(_personage)
+    val personages: MutableLiveData<List<Personaje>> =MutableLiveData(_personage)
 
 }

@@ -6,7 +6,7 @@
     app:startDestination="@id/recycler_itemsFragments">
     <fragment
         android:id="@+id/recycler_itemsFragments"
-        android:name="com.example.recyclerviewdragonball.ui.personage.PersonageListFragment"
+        android:name="com.example.recyclerviewdragonball.ui.personage.PersonajeListFragment"
         android:label="fragment_recycler_items_fragments"
         tools:layout="@layout/fragment_recycler_items_fragments" />
 </navigation>
