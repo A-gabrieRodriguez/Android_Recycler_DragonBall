@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.example.recyclerviewdragonball.R
 import com.example.recyclerviewdragonball.databinding.FragmentPersonajeListBinding
+import com.example.recyclerviewdragonball.model.Personaje
 import com.example.recyclerviewdragonball.repository.DictionaryRepository
 
 class PersonajeListFragment : Fragment() {
@@ -42,6 +43,17 @@ class PersonajeListFragment : Fragment() {
             wordAdapter.setData(data)
             wordListRecyclerView.smoothScrollToPosition(data.lastIndex)
         }
+
+        binding.actionAgregarPersonage.setOnClickListener {
+            val newPersonajes = Personaje(binding.editNombre.text.toString(),binding.editDescripcion.text.toString(),binding.editPhoto.text.toString())
+            viewModel.onAddPersonaje(newPersonajes)
+            clearEdits()
+        }
+    }
+    fun clearEdits(){
+        binding.editDescripcion.setText("")
+        binding.editNombre.setText("")
+        binding.editPhoto.setText("")
     }
 
 }
