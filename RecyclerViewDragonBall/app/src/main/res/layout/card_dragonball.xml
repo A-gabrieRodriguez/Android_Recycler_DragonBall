@@ -32,8 +32,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
-            app:imageResource="@{personage.image}"
-            tools:src="@drawable/ic_launcher_foreground" />
+            android:src="@{personage.imagen}"
+             />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
